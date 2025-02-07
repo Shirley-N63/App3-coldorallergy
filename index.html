@@ -34,31 +34,31 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
       <link rel="stylesheet" href="w3-colors-flat.css">
    </head> 
 
-
+<!-- javascript function section -->
 <script>
-        var allergy_count = 0;
-var cold_count = 0;
+	var allergy_count = 0; // var allergy_count declares the variable
+	var cold_count = 0; // 0 initializes the variable
 
-function allergyAdd() {
-    allergy_count += 1;
+	function allergyAdd() {
+   	 	allergy_count += 1;
 }
 
-function coldAdd() {
-    cold_count += 1;
+	function coldAdd() {
+    		cold_count += 1;
 }
 
 
 	function getResult() {
-    var allergyPercent = (allergy_count / 6) * 100;
+    var allergyPercent = (allergy_count / 6) * 100; // divide by the number of questions
     var coldPercent = (cold_count / 6) * 100;
     var resultText = document.getElementById("resultText"); // Updated ID reference
-    resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%<br> Probability it is a cold = " + coldPercent + "%";
+    resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%<br> Probability it is a cold = " + coldPercent + "%"; //+ and "" prints out what is in variable-->
 }
 	
   </script>
 
 
-
+<!-- this displays multiple pages within html body-->
 <style>	
 .body {
      margin: 0em;
@@ -71,7 +71,7 @@ function coldAdd() {
     top: 0;
     left: -100vw;
     overflow-y: auto;
-    z-index: 0;
+    z-index: 0; /*this first displays html not part of body and then show targeted page after */
     background-color: hsl(0,0%,100%);
     border: 2px solid red; /* Debugging border */
 }
@@ -82,108 +82,122 @@ function coldAdd() {
 }
 </style>
 
+<!--this is the front page when you first open the app-->	
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
 	<h1>Cold or Allergies?</h1>
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p> <!-- disclaimers on front page-->
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
 	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
-
-<div class="page" id="one">  <!--This refers to the page number of the website-->
-	<div id="header" class="w3-container w3-flat-carrot"> <!--Flat Carrot is the color-->
-		<h1>Question 1</h1>
-	</div>
+	<!--End of Disclaimers-->
 	
-    	<div id="content" class="w3-container">
-        <p>Are your eyes watery or itchy?</p> <!--This is the question on the page-->
-		<a href="#two" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a>
-		<a href="#two" onclick="coldAdd();" class="w3-btn w3-black"> No </a>
+<!-- Start of Page 1 -->
+<div class="page" id="one">  <!--page number of the website-->
+	<div id="header" class="w3-container w3-flat-carrot"> <!-- head is the header section and title is the page's title-->
+		<h1>Question 1</h1>
+	</div> <!-- divisions in the body-->
+	
+    	<div id="content" class="w3-container"> <!-- content of page 1 starts here-->
+        <p>Are your eyes watery or itchy?</p> <!--question on the page-->
+		<a href="#two" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a> <!--href = #two tells link to go to the next page-->
+		<a href="#two" onclick="coldAdd();" class="w3-btn w3-black"> No </a> <!-- onclick does what it equals when button is clicked-->
     	</div>
 </div>
+<!--End of Page 1-->
 
-<div class="page" id="two">  <!--This refers to the page number of the website-->
+<!--Start of Page 2-->
+<div class="page" id="two">  <!--page number-->
 	<div id="header" class="w3-container w3-flat-carrot"> <!--Flat Carrot is the color-->
 		<h1>Question 2</h1>
 	</div>
 	
-    	<div id="content" class="w3-container">
-        <p>Do you have a fever?</p> <!--This is the question on the page-->
-		<a href="#three" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a>
-		<a href="#three" onclick="allergyAdd();" class="w3-btn w3-black"> No </a>
+    	<div id="content" class="w3-container"> <!--content of page 2 starts here-->
+        <p>Do you have a fever?</p> <!--question on page 2-->
+		<a href="#three" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a> <!--coldAdd keeps track of the calculations when the yes button is clicked-->
+		<a href="#three" onclick="allergyAdd();" class="w3-btn w3-black"> No </a> <!-- allergyAdd keeps track of calculations when the no button is clicked-->
     	</div>
 </div>	
+<!--End of Page 2-->
 
-<div class="page" id="three">  <!--This refers to the page number of the website-->
-	<div id="header" class="w3-container w3-flat-carrot"> <!--Flat Carrot is the color-->
+<!--Start of Page 3-->
+<div class="page" id="three">  <!--page number-->
+	<div id="header" class="w3-container w3-flat-carrot"> 
 		<h1>Question 3</h1>
 	</div>
 	
-    	<div id="content" class="w3-container">
-        <p>Do you have a sore throat?</p> <!--This is the question on the page-->
-		<a href="#four" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a>
-		<a href="#four" onclick="allergyAdd();" class="w3-btn w3-black"> No </a>
+    	<div id="content" class="w3-container"> <!--content of page 3 starts here-->
+        <p>Do you have a sore throat?</p> <!--question on page 3-->
+		<a href="#four" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a> <!--yes signifies cold-->
+		<a href="#four" onclick="allergyAdd();" class="w3-btn w3-black"> No </a> <!--no signifies allergy-->
     	</div>
 </div>	
-	
-<div class="page" id="four">  <!--This refers to the page number of the website-->
-	<div id="header" class="w3-container w3-flat-carrot"> <!--Flat Carrot is the color-->
+<!--End of Page 3--> 
+
+<!--Start of Page 4-->
+<div class="page" id="four">  <!--page number-->
+	<div id="header" class="w3-container w3-flat-carrot"> 
 		<h1>Question 4</h1>
 	</div>
 	
-    	<div id="content" class="w3-container">
-        <p>Are your symptoms seasonal or chronic?</p> <!--This is the question on the page-->
-		<a href="#five" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a>
-		<a href="#five" onclick="coldAdd();" class="w3-btn w3-black"> No </a>
+    	<div id="content" class="w3-container"> <!--content of page 4 starts here-->
+        <p>Are your symptoms seasonal or chronic?</p> <!--question on page 4-->
+		<a href="#five" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a> <!--yes signifies allergy-->
+		<a href="#five" onclick="coldAdd();" class="w3-btn w3-black"> No </a> <!--no signifies cold-->
     	</div>
 </div>	
-	
-<div class="page" id="five">  <!--This refers to the page number of the website-->
-	<div id="header" class="w3-container w3-flat-carrot"> <!--Flat Carrot is the color-->
+<!--End of Page 4--> 
+
+<!--Start of Page 5 (additional cold question)-->
+<div class="page" id="five">  <!--page number-->
+	<div id="header" class="w3-container w3-flat-carrot"> 
 		<h1>Question 5</h1>
 	</div>
 	
-    	<div id="content" class="w3-container">
-        <p>Do you have body aches?</p> <!--This is the question on the page-->
-		<a href="#six" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a>
-		<a href="#six" onclick="allergyAdd();" class="w3-btn w3-black"> No </a>
+    	<div id="content" class="w3-container"> <!--content of page 5 starts here-->
+        <p>Do you have body aches?</p> <!--question on page 5-->
+		<a href="#six" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a> <!--yes signifies cold-->
+		<a href="#six" onclick="allergyAdd();" class="w3-btn w3-black"> No </a> <!--allergy signifies allergy-->
     	</div>
 </div>	
-
-<div class="page" id="six">  <!--This refers to the page number of the website-->
-	<div id="header" class="w3-container w3-flat-carrot"> <!--Flat Carrot is the color-->
+<!--End of Page 5-->
+	
+<!--Start of Page 6 (additional allergy question)-->
+<div class="page" id="six">  <!--page number-->
+	<div id="header" class="w3-container w3-flat-carrot"> 
 		<h1>Question 6</h1>
 	</div>
 	
-    	<div id="content" class="w3-container">
-        <p>Have you been experincing symptoms for longer than 14 days?</p> <!--This is the question on the page-->
-		<a href="#results" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a>
-		<a href="#results" onclick="coldAdd();" class="w3-btn w3-black"> No </a>
+    	<div id="content" class="w3-container"> <!-- content of page 6 starts here-->
+        <p>Have you been experincing symptoms for longer than 14 days?</p> <!--question on page 6-->
+		<a href="#results" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a> <!--yes signifies allergy-->
+		<a href="#results" onclick="coldAdd();" class="w3-btn w3-black"> No </a> <!--no signifies cold-->
     	</div>
 </div>
-		
-	
-<div class="page" id="results">  <!-- This refers to the results page -->
+<!--End of Page 6-->		
+
+<!--Start of Results Page-->
+<div class="page" id="results">  <!-- refers to results page -->
     <div id="header" class="w3-container w3-flat-carrot">
         <h1>Results</h1>
     </div>
 
     <div id="content" class="w3-container">
-        <p>Click the button below to find out your results!</p>
+        <p>Click the button below to find out your results!</p> <!-- context above the button-->
     </div>	
 
     <div id="content" class="w3-container">
-        <button onclick="getResult();">Results</button>
+        <button onclick="getResult();">Results</button> <!-- this button replaces the previous yes/no buttons-->
         <p id="resultText"></p>  <!-- Renamed from "results" to "resultText" -->
     </div>
 </div> 
-
+<!--End of Results Page-->
 	
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
