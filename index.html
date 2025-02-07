@@ -51,8 +51,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         }
 
 	function getResult() {
-    var allergyPercent = (allergy_count / 4) * 100;
-    var coldPercent = (cold_count / 4) * 100;
+    var allergyPercent = (allergy_count / 6) * 100;
+    var coldPercent = (cold_count / 6) * 100;
     var resultText = document.getElementById("resultText"); // Updated ID reference
     resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%<br> Probability it is a cold = " + coldPercent + "%";
 }
@@ -144,7 +144,31 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<a href="#results" onclick="coldAdd();" class="w3-btn w3-black"> No </a>
     	</div>
 </div>	
-
+	
+<div class="page" id="five">  <!--This refers to the page number of the website-->
+	<div id="header" class="w3-container w3-flat-carrot"> <!--Flat Carrot is the color-->
+		<h1>Question 5</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Do you have body aches?</p> <!--This is the question on the page-->
+		<a href="#six" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a>
+		<a href="#six" onclick="allergyAdd();" class="w3-btn w3-black"> No </a>
+    	</div>
+</div>
+	
+<div class="page" id="six">  <!--This refers to the page number of the website-->
+	<div id="header" class="w3-container w3-flat-carrot"> <!--Flat Carrot is the color-->
+		<h1>Question 6</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Have you been experiencing symptoms for longer than 14 days?</p> <!--This is the question on the page-->
+		<a href="#results" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a>
+		<a href="#results" onclick="coldAdd();" class="w3-btn w3-black"> No </a>
+    	</div>
+</div>	
+	
 <div class="page" id="results">  <!-- This refers to the results page -->
     <div id="header" class="w3-container w3-flat-carrot">
         <h1>Results</h1>
